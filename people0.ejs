@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People List</title>
+    <style>
+        .personCard{
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            max-width: 25%;
+            padding: 10px;
+            margin:auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    </div>
+    <%
+
+     for(let i = 0; i < data.people.length; i++){
+         var person = data.people[i];
+     %>
+        <div class="personCard" id="person<%=i%>">
+            <img width="60" height="80" style="display: inline" src="<%=person.avatar%>"/>
+            <div style="display: inline-block">
+                <h3 style="display: inline"><%=person.first_name+" "+person.last_name%></h3>
+                <div style="display:inline-block;margin-left: 10px">
+                    <p style="color:<%=person.alive?"green":"red"%>;"><%=person.alive?"Alive":"Dead"%></p>
+                </div>
+
+                <p><i><%=person.job%></i></p>
+            </div>
+
+        </div>
+
+    <%
+     }
+     %>
+
+
+
+</body>
+</html>
